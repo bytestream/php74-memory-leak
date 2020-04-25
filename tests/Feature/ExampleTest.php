@@ -18,4 +18,16 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    /**
+     * Added basic faker.
+     *
+     * @return void
+     */
+    public function testFaker()
+    {
+        $x = factory(\App\Message::class)->make();
+
+        $this->assertNotNull($x);
+    }
 }
